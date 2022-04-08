@@ -1,0 +1,751 @@
+:root{
+    --fuentePrincipal: 'Roboto', sans-serif;
+    --fuenteSecundaria: 'Lato', sans-serif;  
+    --separacion:5rem;
+    
+    --primario: #1073ba;
+    --secundario:#00da55;
+    --gris:--#3b3b3b;
+    --blanco:#fff;
+    --negro:#1f1e1e;
+    --grisClaro:#e1e1e1;
+    
+    
+}
+
+html{
+   
+    box-sizing: border-box;
+    font-size: 62.5%;           /*convierte 1rem en 10px*/
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+   
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+    line-height: 1.5;           /*interlineado de 1.5*/
+}
+
+    /*Globales*/
+.contenedor{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+h1,h2,h3{
+    font-weight: 900;
+    font-family: var(--fuenteSecundaria);
+    margin: calc( var(--separacion)/2 ) 0;        /*me dara la mitad de la separacion arriba y abajo*/
+}
+
+h1{
+    font-size: 4.4rem;
+}
+
+h2{
+    font-size: 3.6rem;
+}
+
+h3{
+    font-size: 2.8rem;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+.text-center{
+    text-align: center;
+}
+
+
+
+            /* header  */
+/*Degradados*/
+.degradado-verde{
+    color: transparent;  
+    background: linear-gradient(to right, var(--primario) 0%, var(--secundario) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;  
+}
+
+.header{
+    background-color: var(--negro);
+    padding: calc(var(--separacion)*3) 0;
+    color: var(--blanco); 
+}
+
+.header img{
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width:768px){           /*creamos el grid para dividir la imagen y el texto en un dispositivo grande*/
+    .contenido-header{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+    } 
+}
+
+.texto-header{
+    text-align: center;
+    padding-top: var(--separacion);
+}
+
+@media (min-width:768px){ 
+     .texto-header{
+         text-align: left;
+         padding: 0;
+
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+     }
+}
+
+.texto-header p{        /*le pongo un margin de 0 al texto header para eliminar el espacio */
+    margin: 0;
+}
+
+.tagline-producto{
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.nombre-producto{
+    font-size: 6rem;
+    margin: 0;
+}
+
+
+
+
+
+.iconos img{
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto;
+    margin: 3rem auto;
+
+    
+}
+
+
+.iconos .iconoAnim{transition-property: transform ;                      /*Agrego una animacion con transicion suave  a los iconos                            ANIMACION DE ICONOS*/
+                transition-duration: .3s;                                                 /*OJO la clase en comun se debe crear en el hijo directo de iconos, no en un subhijo*/
+}
+.iconos .iconoAnim:hover{
+        transform: scale(1.5);   
+}
+
+
+
+
+
+
+
+
+.iconos h3{
+    text-align: center;
+    color: var(--primario);
+    margin:0 auto;
+}
+
+.iconos p{
+    max-inline-size: 40rem;
+    text-align: center;
+}
+
+
+
+
+
+@media (min-width:768px){ 
+    .webp .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.webp); 
+    }
+    
+    .avif .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.avif); 
+    }
+    
+    .notavif.notwebp .sobre-tech{
+        background-image:   linear-gradient(to left, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.jpg);  
+    }
+    
+    .nombre-producto{
+        font-size: 10rem;
+        margin: 0;
+        line-height: 1;     /*indico un interlineado de 1 */
+    }
+
+
+    .precio-producto span{
+    font-size: 6rem;
+    font-weight: 900;
+    }
+
+    /*Degradados*/
+    .degradado-verde{
+        color: transparent;  
+        background: linear-gradient(to right, var(--primario) 0%, var(--secundario) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;  
+    }
+
+
+    /*Iconos*/
+    .iconos{
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: minmax(2rem,auto) 1fr;
+        /* grid-template-rows: repeat(4,1fr);  */
+
+
+    }
+
+    
+
+    .iconos .subttSon{
+    grid-row: 2/3; 
+    }
+
+    .iconos .textSon{
+    grid-row: 3/4;
+    }
+
+    .iconos .subtGar{
+    grid-row: 2/3; 
+    }
+
+    .iconos .textGar{
+    grid-row: 3/4;
+    }
+
+
+
+    .iconos img{
+        width: 7rem;
+        height: 7rem;
+        margin: 0 auto;
+        margin: 3rem auto;
+       
+    }
+
+    
+
+
+    .iconos h3{
+        color: var(--primario);
+        margin:0 auto;
+    }
+
+    .iconos p{
+        max-inline-size: 40rem;
+        text-justify: center;
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+
+
+.sobre-tech{
+    background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+                        url(../img/imagen-mujer.webp);                                               /*esta parte pertenece a la imagen*/
+    background-position: right;
+    background-repeat: repeat,no-repeat;                        /*el 1er repeat afecta al linear gradient (fondo azul), el 2do afecta a la imagen*/
+    background-size: 100%, 110rem;
+
+   
+}
+
+.sobre-tech-grid{
+    display: grid;
+    grid-template-rows: repeat(2,auto);
+    /* grid-template-rows: repeat(2,40rem); */
+    row-gap: var(--separacion);
+    
+}
+
+.texto-sobre-tech{
+    grid-row: 2/3;
+    color: var(--blanco);
+}
+
+
+.texto-sobre-tech h2{
+    font-size: 4rem;
+    text-align: center;
+   
+}
+
+.texto-sobre-tech p{
+    padding-top: 13rem;
+    text-align:justify;
+    font-size: 2rem;
+}
+
+
+
+@media (min-width:768px){           /*TAMANO PARA UNA TABLET*/
+    .sobre-tech-grid{
+        /* grid-template-rows: unset; */
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 5rem;           /*me separa el texto de la imagen*/
+    }
+
+    .sobre-tech{
+                                                   /*esta parte pertenece a la imagen*/
+        background-repeat: no-repeat;                        /*el 1er repeat afecta al linear gradient (fondo azul), el 2do afecta a la imagen*/ 
+        height: 50rem;                      /*al ponerle altura definida no se salia en vertical la imagen y el texto*/
+    }
+
+    .texto-sobre-tech h2{
+       font-size: 4rem;
+        justify-items: start;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .texto-sobre-tech p{
+       
+       padding:0;
+       text-align:left;
+       font-size: 2rem;
+       padding-top:0;   
+    }
+}
+
+@media (min-width:420px) and (max-width:766px){ 
+     .iconos p{
+      text-align: center;
+    }
+}
+
+
+/*MODELOS TechPro    280px*/
+.titulo-modelos{
+    font-size: 4rem;
+    text-align: center;
+    
+    color: transparent;  
+    background: linear-gradient(to right, var(--primario) 0%, var(--secundario) 100%);     /*Color degradado*/
+    -webkit-background-clip: text;
+    background-clip: text;  
+}
+
+
+
+.modelos-grid{
+    display:flex;
+    flex-direction: column-reverse;
+    
+}
+
+.item{
+    background: var(--grisClaro);
+    margin-bottom: 2rem;
+    padding: 2rem auto;     /*se le agrega padding al elemento dentro del item*/
+    color: var(--primario);
+    border-radius: 2rem;
+    min-height: 20rem;
+    
+     display: flex;
+     flex-direction: column; 
+     align-items: center;
+   /* align-items: center;    /*alinea en vertical*/
+
+   transition-property: transform;
+   transition-duration: .3s;
+}
+
+
+/*animacion de los items*/
+.item:hover{
+    transform: scale(1.1);   
+}
+
+
+/*animacion de imagenes de audifonos de items*/
+.item img{
+    transition-property: transform;
+    transition-duration: .3s;
+}
+.item img:hover{
+    transform: scale(1.8);   
+}
+
+
+
+
+.item h3{
+    font-size: 2.4rem;
+    line-height: 0.5rem;      /*le doy un interlineado entre el h3 y el precio*/   
+}
+.item .precio{
+    font-size:5rem;
+    padding-bottom: 2rem;
+   
+}
+.item:first-of-type{        /*ahora el primero es el ultimo y el primero el ultimo porque le dimos column-reverse con flexbox y le decimos que el ultimo de la columna
+                                        no tenga margen en el bottom*/
+    margin-bottom: 0;
+}
+.techz{
+    background-color: var(--primario);
+    color: var(--blanco);
+    
+}
+.techz .precio{
+    font-size: 6rem;
+}
+.item img{
+    height: 10rem;
+    width: 10rem;
+    margin-bottom: 2rem;
+}
+
+
+
+
+/*MODELOS TechPro    411px*/
+@media (min-width:411px){ 
+    .webp .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.webp); 
+    }
+    
+    .avif .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.avif); 
+    }
+    
+    .notavif.notwebp .sobre-tech{
+        background-image:   linear-gradient(to left, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.jpg);  
+    }
+
+    .item{
+        background: var(--grisClaro);
+        margin-bottom: 1rem;
+        padding: 2rem auto;     /*se le agrega padding al elemento dentro del item*/
+        color: var(--primario);
+        border-radius: 2rem;
+        min-height: 20rem;
+        
+        display: unset;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);           /*puse mejor  1fr porque no permitia aumentar de tamano la imagen que estaba dentro de esta columna en 912px*/
+        grid-template-rows: repeat(2,10rem);
+        /*align-items: center;    /*alinea en vertical*/
+        justify-content: space-evenly;
+        row-gap: 0;
+    }
+
+    .techz{
+        background-color: var(--primario);
+        color: var(--blanco);
+    }
+
+    .item img{
+        grid-row: 1/3;
+        grid-column: 2/3;
+    
+    }
+
+    .item h3{
+        padding-bottom: 0;
+        line-height: 0;
+        margin: 1rem auto 0 auto;           /*el margin controla la posicion vertical u horizontal del texto y el precio*/
+    }
+    .item .precio{
+    
+    margin-top: 0;
+    padding-top: 0;
+    line-height: 0;
+    margin: 0 auto 5rem auto;       /*el margin controla la posicion vertical u horizontal del texto y el precio*/
+    }   
+}
+
+
+
+
+
+/*MODELOS TechPro    600px*/
+@media (min-width:600px){ 
+    .webp .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.webp); 
+    }
+    
+    .avif .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.avif); 
+    }
+    
+    .notavif.notwebp .sobre-tech{
+        background-image:   linear-gradient(to left, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.jpg);  
+    }
+
+    .item{
+        justify-content: space-evenly; 
+        
+    }
+    
+
+    .item img{
+        height: 14rem;
+        width: 14rem;
+    }
+
+    .item h3{
+        font-size: 2.6rem;
+    }
+    .item .precio{
+    font-size: 7rem;
+    }
+}
+
+
+@media (min-width:992px){ 
+    .modelos-grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,auto);         /*le puse auto para eliminar el margin bottom de 0 que tiene el itemZ (las rows tendran un tamanio automatico del contenido)*/
+        /* gap: 2rem;  */
+        gap: 1rem;
+    } 
+
+    .techz{
+        grid-row: 1/3;
+        grid-column: 2/3;
+        
+        display: grid;
+        grid-template-rows: repeat(2,auto); 
+        
+    }
+
+
+    .techz .titleZ{
+        margin-top: 12rem; 
+        font-size: 3rem;  
+    }
+
+    .techz .precio{
+        margin: 0 auto 10rem auto;
+    } 
+
+    .techz .imgZ{
+        height: 20rem;
+        width: 20rem;
+        
+    }
+    
+}
+
+
+
+
+                            /*Seccion NEWSLATER*/
+.newslater{
+    background-image: linear-gradient(to bottom, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.avif);
+    background-position: top center;
+    background-size: 100% 55rem;
+    background-repeat: no-repeat;
+    background-position: top center;
+    /* background-size: 100% 45rem; */
+    display: block;
+    object-fit: cover;
+    height: auto;
+    width: auto;
+    margin-top: 5rem;
+}
+
+
+.contenido-newslater{
+    display: grid;
+    grid-template-rows: repeat(2,30rem);    /*30 rem le dara un tamanio mas normal a la imagen*/
+    gap: var(--separacion); 
+    align-items: center;
+}
+
+@media (min-width:360px){ 
+    .webp .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.webp); 
+    }
+    
+    .avif .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.avif); 
+    }
+    
+    .notavif.notwebp .sobre-tech{
+        background-image:   linear-gradient(to left, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.jpg);  
+    }
+
+    .texto-newsletter{
+        grid-row: 2/3;
+        justify-content: center;
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    .texto-newsletter h3{
+        margin-top: 0;
+    }
+    .contenido-newslater{
+        row-gap: 0;
+    }
+}
+
+@media (min-width:540px){ 
+    .webp .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.webp); 
+    }
+    
+    .avif .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.avif); 
+    }
+    
+    .notavif.notwebp .sobre-tech{
+        background-image:   linear-gradient(to left, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.jpg);  
+    }
+
+    .texto-newsletter{
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+    }
+    .texto-newsletter h3{
+        margin-top: 0;
+    }
+
+    .newslater{
+        
+    background-size: 100%, 100rem;
+    background-position: center -21rem 5rem;
+    padding: 5rem 0;
+    }    
+}
+
+@media (min-width:750px){ 
+    .webp .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.webp); 
+    }
+    
+    .avif .sobre-tech{
+        background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.avif); 
+    }
+    
+    .notavif.notwebp .sobre-tech{
+        background-image:   linear-gradient(to left, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+        url(../img/imagen-mujer.jpg);  
+    }
+
+     .contenido-newslater{
+         grid-template-rows: unset;
+         grid-template-columns: repeat(2,1fr);
+     }
+     .texto-newsletter{
+         grid-row: unset;
+         grid-column: 2/3;
+         display: block;
+        margin-left: 8rem;
+     }
+
+     .newslater{
+            /*El 50% del fondo de la derecha de la imagen sera transparente*/
+         background-image: linear-gradient(to right, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.jpg);
+        background-position: center, -25rem -16rem;
+        background-size: 100%, 100rem;
+        padding-left: 5rem;
+     }
+}
+
+
+
+.newslater-form{
+column-gap: 1/ -1;
+}
+
+.texto-newsletter{
+    grid-row: 2/3;
+    justify-content: center;
+    
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.texto-newsletter h2{
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    text-align: justify;
+}
+
+
+
+
+.formulario input[type="text"]{
+    width: 100%;
+    padding:1rem;
+}
+
+.formulario input[type="submit"]{
+    width: 100%;
+    padding:2rem;
+    background-color: var(--primario);
+    color: var(--blanco);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+    border: none;   
+    cursor: pointer;
+}
+
+.footer p{
+    text-align: center;
+    font-family: var(--fuenteSecundaria);
+    text-transform: uppercase;
+    font-size: 2rem;
+    color:var(--primario);
+    padding:;
+}
+
+.webp .sobre-tech{
+    background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+    url(../img/imagen-mujer.webp); 
+}
+
+.avif .sobre-tech{
+    background-image:   linear-gradient(to bottom, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+    url(../img/imagen-mujer.avif); 
+}
+
+.notavif.notwebp .sobre-tech{
+    background-image:   linear-gradient(to left, transparent 50%, var(--primario) 0%),            /*esta parte pertenece a el fondo en azul*/
+    url(../img/imagen-mujer.jpg);  
+}
